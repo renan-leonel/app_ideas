@@ -1,44 +1,54 @@
-var minutes = 1;
-var seconds = 59;
+var minutes = 25;
+var seconds = 0;
+var flag = false;
 
 function load(){
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
 }
 
-function start(){
-
-    var min_interval = setInterval(minutesCountdown, 60000); // executa a função minutesCountdown() a cada 60 segundos
-    var sec_interval = setInterval(secondsCountdown, 1000); // executa a função secondsCountdown() a cada 1 segundos
-    
-    function minutesCountdown(){
-        minutes = minutes - 1;
-        document.getElementById("minutes").innerHTML = minutes;
-    }
-
-    function secondsCountdown(){       
-        seconds = seconds - 1;
-        document.getElementById("seconds").innerHTML = seconds;
-        
-        if(seconds <= 0){
-            if(minutes <= 0){
-                clearInterval(min_interval); // para a execução da linha 13
-                clearInterval(sec_interval); // para a execução da linha 14
-                console.log("terminou");
-            }
-            seconds = 60;
-        }
-    }
+function enableButton(){ // permitir que o botão terminar possa ser clicado
+    document.getElementById("finish").disabled = false;
 }
 
-// function finish(){
-
-//     minutes = 0;
-//     document.getElementById("minutes").innerHTML = minutes;
-//     seconds = 0;
-//     document.getElementById("seconds").innerHTML = seconds;
-// }
+function finish(){
+    flag = true;
+}
     
+
+function start(){
+
+    enableButton();
+
+    var interval = setInterval(() => {
+        if(flag == false){
+            if(seconds == 0){
+                if(minutes == 0){
+                    clearInterval(interval); // acabou o contador 00:00
+                }
+                else{
+                    minutes = minutes - 1;
+                    minutes = minutes < 10 ? '0' + minutes : minutes;
+                    document.getElementById("minutes").innerHTML = minutes;
+                    seconds = 59;
+                    document.getElementById("seconds").innerHTML = seconds;
+                }
+            }
+            else{
+                seconds = seconds - 1;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                document.getElementById("seconds").innerHTML = seconds;
+            }
+        }
+        else{
+            clearInterval(interval); // botão terminar foi acionado, setando o contador pra 00:00
+            document.getElementById("seconds").innerHTML = 0;
+            document.getElementById("minutes").innerHTML = 0;
+        }
+    }, 1000); 
+}
 
 
 
