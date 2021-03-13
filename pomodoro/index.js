@@ -50,5 +50,22 @@ function start(){
     }, 1000); 
 }
 
+function increaseOne(){
+    minutes = minutes + 1;
+    document.getElementById("minutes").innerHTML = minutes;
+}
 
+function decreaseOne(){
+    minutes = minutes - 1;
+    document.getElementById("minutes").innerHTML = minutes;
+}
 
+function increaseFive(){
+    minutes = minutes + 5;
+    document.getElementById("minutes").innerHTML = minutes;
+}
+
+function decreaseFive(){
+    minutes = minutes - 5;
+    document.getElementById("minutes").innerHTML = minutes;
+}

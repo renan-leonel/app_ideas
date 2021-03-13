@@ -41,10 +41,11 @@ body{
     background-color: #dddddd;
     font-family: 'Poppins', sans-serif; 
     font-size: 1.1rem;
-    color: #2e384d;    
+    color: #2e384d;   
+    cursor: pointer;
 }
 
-#buttons #start, #buttons #finish, #buttons #increase, #buttons #decrease {
+#buttons #start, #buttons #finish, #buttons #increaseOne, #buttons #decreaseOne, #buttons #increaseFive, #buttons #decreaseFive {
     align-self: center;
     justify-self: center;
     width: 8rem;
@@ -56,10 +57,29 @@ body{
 
 
 /* estilizações pra centralizar os botões no display grid, único jeito que consegui */
-#buttons #increase, #buttons #start{ 
+#buttons #increaseOne, #buttons #start, #buttons #increaseFive { 
     transform: translateX(400px); /* move horizontalmente */
 }
 
-#buttons #decrease, #buttons #finish{
+#buttons #decreaseOne, #buttons #finish, #buttons #decreaseFive {
     transform: translateX(-400px); /* move horizontalmente */
+}
+
+#social p{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+#social p img{
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+
+/* animações dos botões */
+
+#buttons .anim:hover{
+    background-color: #c5c4c4;
+    transition: 300ms;
 }
