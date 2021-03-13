@@ -44,28 +44,34 @@ function start(){
         }
         else{
             clearInterval(interval); // botão terminar foi acionado, setando o contador pra 00:00
-            document.getElementById("seconds").innerHTML = 0;
-            document.getElementById("minutes").innerHTML = 0;
+            document.getElementById("seconds").innerHTML = '0' + 0;
+            document.getElementById("minutes").innerHTML = '0' + 0;
         }
     }, 1000); 
 }
 
-function increaseOne(){
-    minutes = minutes + 1;
-    document.getElementById("minutes").innerHTML = minutes;
-}
-
-function decreaseOne(){
-    minutes = minutes - 1;
-    document.getElementById("minutes").innerHTML = minutes;
-}
-
 function increaseFive(){
-    minutes = minutes + 5;
-    document.getElementById("minutes").innerHTML = minutes;
+    if(minutes < 30){
+        minutes = minutes + 5;
+        document.getElementById("minutes").innerHTML = minutes;
+    }
 }
 
 function decreaseFive(){
-    minutes = minutes - 5;
+    if(minutes > 5){
+        minutes = minutes - 5;
+        document.getElementById("minutes").innerHTML = minutes;
+        
+        if(minutes <= 5){
+            minutes = '0' + minutes;
+            document.getElementById("minutes").innerHTML = minutes;
+        }  
+    }   
+}
+
+function reset(){
+    minutes = 25;
     document.getElementById("minutes").innerHTML = minutes;
+    seconds = '0' + 0;
+    document.getElementById("seconds").innerHTML = seconds;
 }

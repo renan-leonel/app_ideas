@@ -4,19 +4,19 @@
 }
 
 body{
-    background-color: #F2F3F5;
+    background-color: #DFCFBE;
     overflow: hidden;
 }
 
 #container h1{
     display: flex;
     justify-content: center;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
 
     font-size: 3rem;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;    
-    color: #2e384d;
+    color: #000000;
 }
 
 #timer{
@@ -25,12 +25,12 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 7rem;
-    margin-top: 7rem;
+    margin-top: 3rem;
     font-family: 'Poppins', sans-serif;    
 }
 
 #buttons{
-    margin-top: 5rem; /* seta margem do contador */
+    margin-top: 3rem; /* seta margem do contador */
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr; /* cria duas colunas */
@@ -45,7 +45,7 @@ body{
     cursor: pointer;
 }
 
-#buttons #start, #buttons #finish, #buttons #increaseOne, #buttons #decreaseOne, #buttons #increaseFive, #buttons #decreaseFive {
+#buttons #start, #buttons #finish, #buttons #increaseOne, #buttons #decreaseOne, #buttons #increaseFive, #buttons #decreaseFive, #buttons #pause, #buttons #reset {
     align-self: center;
     justify-self: center;
     width: 8rem;
@@ -57,23 +57,38 @@ body{
 
 
 /* estilizações pra centralizar os botões no display grid, único jeito que consegui */
-#buttons #increaseOne, #buttons #start, #buttons #increaseFive { 
-    transform: translateX(400px); /* move horizontalmente */
+#buttons #increaseOne, #buttons #start, #buttons #increaseFive, #buttons #pause { 
+    transform: translateX(25rem); /* move horizontalmente */
 }
 
-#buttons #decreaseOne, #buttons #finish, #buttons #decreaseFive {
-    transform: translateX(-400px); /* move horizontalmente */
+#buttons #decreaseOne, #buttons #finish, #buttons #decreaseFive, #buttons #reset {
+    transform: translateX(-25rem); /* move horizontalmente */
 }
 
-#social p{
-    width: 15%;
+#social{
+    height: 5.5vh;
+    width: 8vw;
+    min-width: 6vw;
+    margin-top: 3rem;
+    margin-left: 2rem;
+
+    border-radius: 15px;
+    background-color: white;
     display: flex;
     justify-content: center;
+    align-items: center;    
 }
 
-#social p img{
+#social a{
+    display: flex;
+    justify-content: center; 
+    margin: 0.5rem;
+}
+
+#social a img{
+    display: flex;
+    justify-content: center;
     width: 2rem;
-    margin-left: 1rem;
 }
 
 
