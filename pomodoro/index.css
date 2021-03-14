@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #DFCFBE;
+    background-color: #e26d5c;
     overflow: hidden;
 }
 
@@ -15,8 +15,8 @@ body{
 
     font-size: 3rem;
     font-weight: 400;
-    font-family: 'Poppins', sans-serif;    
-    color: #000000;
+    font-family: 'Varela Round', sans-serif;    
+    color: black;
 }
 
 #timer{
@@ -26,7 +26,7 @@ body{
     justify-content: center;
     font-size: 7rem;
     margin-top: 3rem;
-    font-family: 'Poppins', sans-serif;    
+    font-family: 'Varela Round', sans-serif;    
 }
 
 #buttons{
@@ -38,14 +38,14 @@ body{
 }
 
 #buttons button{
-    background-color: #dddddd;
-    font-family: 'Poppins', sans-serif; 
+    background-color: #ffe1a8;
+    font-family: 'Varela Round', sans-serif; 
     font-size: 1.1rem;
-    color: #2e384d;   
+    color: black;   
     cursor: pointer;
 }
 
-#buttons #start, #buttons #finish, #buttons #increaseOne, #buttons #decreaseOne, #buttons #increaseFive, #buttons #decreaseFive, #buttons #pause, #buttons #reset {
+#buttons #start, #buttons #pause, #buttons #resume, #buttons #reset {
     align-self: center;
     justify-self: center;
     width: 8rem;
@@ -57,37 +57,30 @@ body{
 
 
 /* estilizações pra centralizar os botões no display grid, único jeito que consegui */
-#buttons #increaseOne, #buttons #start, #buttons #increaseFive, #buttons #pause { 
+#buttons #start, #buttons #resume { 
     transform: translateX(25rem); /* move horizontalmente */
 }
 
-#buttons #decreaseOne, #buttons #finish, #buttons #decreaseFive, #buttons #reset {
+#buttons #pause, #buttons #reset {
     transform: translateX(-25rem); /* move horizontalmente */
 }
 
 #social{
     height: 5.5vh;
-    width: 8vw;
-    min-width: 6vw;
-    margin-top: 3rem;
-    margin-left: 2rem;
-
+    width: 9rem;
+    margin: 9rem auto 2rem auto;
     border-radius: 15px;
-    background-color: white;
+    background-color: #ffe1a8;
     display: flex;
     justify-content: center;
     align-items: center;    
 }
 
 #social a{
-    display: flex;
-    justify-content: center; 
     margin: 0.5rem;
 }
 
 #social a img{
-    display: flex;
-    justify-content: center;
     width: 2rem;
 }
 

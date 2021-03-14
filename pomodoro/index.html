@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="/pomodoro/index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body onload="load()"> 
     <div id="container">
@@ -18,16 +18,13 @@
             <span id="seconds"></span>          
         </div>
         <div id="buttons">
-            <button id="increaseFive" class="anim" onclick="increaseFive()">+5 min</button>
-            <button id="decreaseFive" class="anim" onclick="decreaseFive()">-5 min</button>
-            <button id="start" class="anim" onclick="start()">Começar</button>
-            <button id="finish" class="anim" onclick="finish()" disabled>Terminar</button>      
-            <button id="pause" class="anim" onclick="pause()">Pause</button>
+            <button id="start" class="anim" onclick="start()">Start</button>
+            <button id="pause" class="anim" onclick="pause()" disabled>Pause</button>      
+            <button id="resume" class="anim" onclick="resume()">Resume</button>
             <button id="reset" class="anim" onclick="reset()">Reset</button>
-
         </div>  
 
-        <div id="social">
+        <footer id="social">
                 <a href="https://www.instagram.com/renanleonel_/?hl=pt-br">
                     <img src="./images/instagram-icon.svg" alt="Instagram">
                 </a>
@@ -37,7 +34,7 @@
                 <a href="https://www.linkedin.com/in/renanleonel/">
                     <img src="./images/linkedin-icon.svg" alt="LinkedIn">
                 </a>
-        </div>
+        </footer>
 
     </div>
 </body>

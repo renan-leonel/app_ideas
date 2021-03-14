@@ -10,18 +10,14 @@ function load(){
 }
 
 function enableButton(){ // permitir que o botão terminar possa ser clicado
-    document.getElementById("finish").disabled = false;
+    document.getElementById("pause").disabled = false;
 }
 
-function finish(){
+function pause(){
     flag = true;
 }
     
-
-function start(){
-
-    enableButton();
-
+function countdown(){
     var interval = setInterval(() => {
         if(flag == false){
             if(seconds == 0){
@@ -43,33 +39,31 @@ function start(){
             }
         }
         else{
-            clearInterval(interval); // botão terminar foi acionado, setando o contador pra 00:00
-            document.getElementById("seconds").innerHTML = '0' + 0;
-            document.getElementById("minutes").innerHTML = '0' + 0;
+            clearInterval(interval); // botão pause foi acionado, setando o contador pro momento do pause
+            document.getElementById("seconds").innerHTML = seconds;
+            document.getElementById("minutes").innerHTML = minutes;
         }
     }, 1000); 
 }
 
-function increaseFive(){
-    if(minutes < 30){
-        minutes = minutes + 5;
-        document.getElementById("minutes").innerHTML = minutes;
+function start(){
+    if(flag == true){
+        flag = false;
     }
+    enableButton();
+    countdown();
 }
 
-function decreaseFive(){
-    if(minutes > 5){
-        minutes = minutes - 5;
-        document.getElementById("minutes").innerHTML = minutes;
-        
-        if(minutes <= 5){
-            minutes = '0' + minutes;
-            document.getElementById("minutes").innerHTML = minutes;
-        }  
-    }   
+function resume(){
+    if(flag == true){
+        flag = false;
+    }
+
+    countdown();    
 }
 
 function reset(){
+    pause();
     minutes = 25;
     document.getElementById("minutes").innerHTML = minutes;
     seconds = '0' + 0;
