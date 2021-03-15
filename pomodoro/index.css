@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #e26d5c;
+    background-color: #e97d6d;
 }
 
 #container{
@@ -63,10 +63,11 @@ body{
 }
 
 #social a{
+    text-decoration: none;
     margin: 0.5rem;
 }
 
-#social a img{
+#social  img{
     width: 2rem;
 }
 
