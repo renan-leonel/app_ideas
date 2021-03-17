@@ -1,5 +1,5 @@
-var minutes = 25;
-var seconds = 0;
+var minutes = 0;
+var seconds = 3;
 var flag = false;
 
 function load(){
@@ -23,6 +23,8 @@ function countdown(){
             if(seconds == 0){
                 if(minutes == 0){
                     clearInterval(interval); // acabou o contador 00:00
+                    restButton = document.getElementById("rest");
+                    restButton.style.display = "block";
                 }
                 else{
                     minutes = minutes - 1;
@@ -64,8 +66,33 @@ function resume(){
 
 function reset(){
     pause();
-    minutes = 25;
-    document.getElementById("minutes").innerHTML = minutes;
-    seconds = '0' + 0;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("minutes").innerHTML = 25;
+    document.getElementById("seconds").innerHTML = '0' + 0;
 }
+
+function rest(){
+
+    document.getElementById("minutes").innerHTML = '0' + 5;
+    document.getElementById("seconds").innerHTML = '0' + 0;
+
+    var restInterval = setInterval(() => {
+        if(seconds == 0){
+            if(minutes == 0){
+                clearInterval(restInterval); // acabou o contador 00:00
+            }
+            else{
+                minutes = minutes - 1;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById("minutes").innerHTML = minutes;
+                seconds = 59;
+                document.getElementById("seconds").innerHTML = seconds;
+            }
+        }
+        else{
+            seconds = seconds - 1;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById("seconds").innerHTML = seconds;
+        }
+    }, 1000);
+}
+

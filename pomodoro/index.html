@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
 
-    <link rel="stylesheet" href="/pomodoro/index.css">
+    <link rel="stylesheet" href="./index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
@@ -17,6 +17,9 @@
             <span id="minutes"></span>
             <span id="seconds"></span>          
         </div>
+
+        <button id="rest" class="animation" onclick="rest()">Descanso</button>
+
         <div id="buttons">
             <button id="start" class="anim" onclick="start()">Start</button>
             <button id="pause" class="anim" onclick="pause()" disabled>Pause</button>      
@@ -38,5 +41,5 @@
 
     </div>
 </body>
-<script src="/pomodoro/index.js"></script>
+<script src="./index.js"></script>
 </html>
