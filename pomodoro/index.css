@@ -93,7 +93,7 @@ body{
 
 /* animações dos botões */
 #buttons .anim:hover{
-    background-color: #fbd285;
+    background-color: #f8cf82;
     transition: 300ms;
 }
 
